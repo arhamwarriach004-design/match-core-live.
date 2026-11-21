@@ -989,7 +989,7 @@
         <div class="line"></div>
         <div class="about">
           <h2>About Match Core</h2>
-          <p>Match Core is a futuristic football match center. Follow <em>live scores with current minutes</em>, deep match information, broadcasts, form and odds — refreshed automatically.</p>
+          <p>Match Core is a futuristic football match center. Follow <em>live scores with current minutes</em>, deep match information, broadcasts and team form — refreshed automatically.</p>
           <p>Data comes from a third-party scoreboard provider. Match Core does not host video streams.</p>
         </div>
 
@@ -1725,21 +1725,6 @@
           ? 'Use the channels above through your TV provider or official streaming apps. Match Core does not host or embed video.'
           : 'Check official league apps, broadcasters, or licensed services in your region. Live video is not embedded on Match Core.'}
       </div>`;
-
-      const odds = (sum.odds && sum.odds[0]) || null;
-      if (odds && (odds.homeTeamOdds || odds.awayTeamOdds || odds.drawOdds || odds.moneyline)) {
-        const homeO = odds.homeTeamOdds?.moneyLine ?? odds.homeTeamOdds?.odds ?? odds.moneyline?.home?.close?.odds;
-        const awayO = odds.awayTeamOdds?.moneyLine ?? odds.awayTeamOdds?.odds ?? odds.moneyline?.away?.close?.odds;
-        const drawO = odds.drawOdds?.moneyLine ?? odds.drawOdds?.odds ?? odds.moneyline?.draw?.close?.odds;
-        if (homeO != null || awayO != null) {
-          blocks += `<div class="section-title">Match odds</div>
-            <div class="odds-row">
-              <div class="odds-box"><div class="val">${homeO != null ? escapeHTML(String(homeO)) : '–'}</div><div class="lbl">Home</div></div>
-              <div class="odds-box"><div class="val">${drawO != null ? escapeHTML(String(drawO)) : '–'}</div><div class="lbl">Draw</div></div>
-              <div class="odds-box"><div class="val">${awayO != null ? escapeHTML(String(awayO)) : '–'}</div><div class="lbl">Away</div></div>
-            </div>`;
-        }
-      }
 
       const lastFive = sum.lastFiveGames || [];
       if (lastFive.length) {
