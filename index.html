@@ -599,14 +599,14 @@
     /* CR7 respectful retirement ambient */
     .cr7-tribute {
       position: fixed;
-      right: -40px;
-      bottom: -20px;
-      width: min(340px, 42vw);
+      right: -15px;
+      bottom: 0;
+      width: min(400px, 45vw);
       height: auto;
       z-index: 0;
       pointer-events: none;
-      opacity: 0.18;
-      filter: saturate(0.9) brightness(0.85);
+      opacity: 0.65;
+      filter: saturate(1) brightness(1);
       mask-image: linear-gradient(to top left, black 40%, transparent 95%);
       -webkit-mask-image: linear-gradient(to top left, black 40%, transparent 95%);
       animation: cr7Float 14s ease-in-out infinite alternate;
@@ -654,7 +654,7 @@
       100% { background-position: 200% 0; }
     }
     @media (max-width: 640px) {
-      .cr7-tribute { width: min(220px, 55vw); opacity: 0.1; }
+      .cr7-tribute { width: min(240px, 59vw); opacity: 0.43; }
       .cr7-seven { font-size: 72px; left: 2%; top: 12%; }
     }
 
@@ -929,7 +929,7 @@
   <div class="bg-orbs"><div class="gold-orb"></div></div>
 
   <div class="cr7-seven" aria-hidden="true">7</div>
-  <img class="cr7-tribute" src="assets/tribute.svg" alt="" aria-hidden="true">
+  <img class="cr7-tribute" title="Cristiano Ronaldo" src="data:image/avif;base64,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" alt="" aria-hidden="true">
   <div class="cr7-ribbon" aria-hidden="true"></div>
   <div class="obrigado-cr7" aria-hidden="true">Obrigado Cristiano Ronaldo 7</div>
 
